@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&display=swap');
+#check__answer__part{
+    background: #000;
+    max-height: 200px;
+    overflow-y: scroll;
+}
+#check__answer__part::-webkit-scrollbar{
+    width: 5px;
+}
+#check__answer__part::-webkit-scrollbar-track{
+    background: #fff;
+    border-radius: 3px;
+    width: 20px;
+}
+#check__answer__part::-webkit-scrollbar-thumb{
+    border-radius: 3px;
+    background: rgb(77, 77, 77);
+}
+.answer__container{
+    padding: 10px 20px;
+}
+.answers{
+    font-family: 'IBM Plex Sans' ,'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 20%;
+    height: 30px;
+    font-size: 25px;
+    border-radius: 15px;
+}
+.false__answer{
+    background: #ff0003;
+}
+.true__answer{
+    background: #08f200;
+}
+.question{
+    font-family: 'IBM Plex Sans' ,'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    width: 100%;
+    margin-bottom: 13px;
+    margin-left: 30px;
+}
+@media (min-width: 768px) {
+    .question{
+        width: 20%;
+        margin-left: 0;
+    }
+    .answers{
+        width: 12%;
+    }
+}
