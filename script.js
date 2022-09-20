@@ -1,7 +1,6 @@
 // i dont want to move from the first slide to the last slide
 var CarouselControlPrev = document.getElementById("previous__button");
 var QuestionsContainerChildren = document.getElementById("questions__container").children;
-console.log(QuestionsContainerChildren.length)
 var CarouselControlNext = document.getElementById("next__button");
 
 CarouselControlPrev.addEventListener("click" , isTheFirstSlide);
