@@ -43,3 +43,240 @@ function CheckThatIsLast(){
     }
 }
 
+// going for auto making slide
+    var dataWithJsonType = `[
+    {
+      "question": "This is Question Number ONE",
+      "answers": [
+        {
+          "answerValue" : "this is first answer value",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "this is second answer value",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "this is third answer value",
+          "IsTrue": true
+        },
+        {
+          "answerValue" : "this is forth answer value",
+          "IsTrue": false
+        }
+      ]
+    } ,
+    {
+        "question": "This is Question Number TWO",
+        "answers": [
+          {
+            "answerValue" : "this is first answer value",
+            "IsTrue": false
+          },
+          {
+            "answerValue" : "this is second answer value",
+            "IsTrue": true
+          },
+          {
+            "answerValue" : "this is third answer value",
+            "IsTrue": false
+          },
+          {
+            "answerValue" : "this is forth answer value",
+            "IsTrue": false
+          }
+        ]
+    },
+    {
+        "question": "This is Question Number THREE",
+        "answers": [
+          {
+            "answerValue" : "this is first answer value",
+            "IsTrue": false
+          },
+          {
+            "answerValue" : "this is second answer value",
+            "IsTrue": true
+          },
+          {
+            "answerValue" : "this is third answer value",
+            "IsTrue": false
+          },
+          {
+            "answerValue" : "this is forth answer value",
+            "IsTrue": false
+          }
+        ]
+    },
+    {
+        "question": "This is Question Number FOUR",
+        "answers": [
+          {
+            "answerValue" : "this is first answer value",
+            "IsTrue": false
+          },
+          {
+            "answerValue" : "this is second answer value",
+            "IsTrue": false
+          },
+          {
+            "answerValue" : "this is third answer value",
+            "IsTrue": true
+          },
+          {
+            "answerValue" : "this is forth answer value",
+            "IsTrue": false
+          }
+        ]
+    },
+    {
+        "question": "This is Question Number FIVE",
+        "answers": [
+          {
+            "answerValue" : "this is first answer value",
+            "IsTrue": true
+          },
+          {
+            "answerValue" : "this is second answer value",
+            "IsTrue": false
+          },
+          {
+            "answerValue" : "this is third answer value",
+            "IsTrue": false
+          },
+          {
+            "answerValue" : "this is forth answer value",
+            "IsTrue": false
+          }
+        ]
+    },
+    {
+        "question": "This is Question Number SIX",
+        "answers": [
+          {
+            "answerValue" : "this is first answer value",
+            "IsTrue": false
+          },
+          {
+            "answerValue" : "this is second answer value",
+            "IsTrue": false
+          },
+          {
+            "answerValue" : "this is third answer value",
+            "IsTrue": false
+          },
+          {
+            "answerValue" : "this is forth answer value",
+            "IsTrue": true
+          }
+        ]
+    },
+    {
+        "question": "This is Question Number SEVEN",
+        "answers": [
+          {
+            "answerValue" : "this is first answer value",
+            "IsTrue": false
+          },
+          {
+            "answerValue" : "this is second answer value",
+            "IsTrue": false
+          },
+          {
+            "answerValue" : "this is third answer value",
+            "IsTrue": false
+          },
+          {
+            "answerValue" : "this is forth answer value",
+            "IsTrue": true
+          }
+        ]
+    },
+    {
+        "question": "This is Question Number EIGHT",
+        "answers": [
+          {
+            "answerValue" : "this is first answer value",
+            "IsTrue": false
+          },
+          {
+            "answerValue" : "this is second answer value",
+            "IsTrue": true
+          },
+          {
+            "answerValue" : "this is third answer value",
+            "IsTrue": false
+          },
+          {
+            "answerValue" : "this is forth answer value",
+            "IsTrue": false
+          }
+        ]
+    },
+    {
+        "question": "This is Question Number NINE",
+        "answers": [
+          {
+            "answerValue" : "this is first answer value",
+            "IsTrue": true
+          },
+          {
+            "answerValue" : "this is second answer value",
+            "IsTrue": false
+          },
+          {
+            "answerValue" : "this is third answer value",
+            "IsTrue": false
+          },
+          {
+            "answerValue" : "this is forth answer value",
+            "IsTrue": false
+          }
+        ]
+    },
+    {
+        "question": "This is Question Number TEN",
+        "answers": [
+          {
+            "answerValue" : "this is first answer value",
+            "IsTrue": false
+          },
+          {
+            "answerValue" : "this is second answer value",
+            "IsTrue": false
+          },
+          {
+            "answerValue" : "this is third answer value",
+            "IsTrue": false
+          },
+          {
+            "answerValue" : "this is forth answer value",
+            "IsTrue": true
+          }
+        ]
+    },
+    {
+        "question": "This is Question Number ELEVEN",
+        "answers": [
+          {
+            "answerValue" : "this is first answer value",
+            "IsTrue": false
+          },
+          {
+            "answerValue" : "this is second answer value",
+            "IsTrue": true
+          },
+          {
+            "answerValue" : "this is third answer value",
+            "IsTrue": false
+          },
+          {
+            "answerValue" : "this is forth answer value",
+            "IsTrue": false
+          }
+        ]
+    }
+    ]`;
+
+    var DataWithObjectType = JSON.parse(dataWithJsonType);
+    console.log(DataWithObjectType)
