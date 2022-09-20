@@ -49,20 +49,6 @@
     font-family: 'IBM Plex Sans' ,'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: white;
 }
-.carousel-control-next , .carousel-control-prev{
-    position: relative !important;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: auto !important;
-    padding: 10px 20px !important;
-    border-radius: 30px;
-    color: #fff;
-    text-align: center;
-    opacity: 1 !important;
-    transition: none !important;
-}
 @media (min-width: 768px) and (max-width:1200px){
     .question{
         width: 20%;
