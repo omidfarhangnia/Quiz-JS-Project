@@ -5,6 +5,13 @@ var CarouselControlNext = document.getElementById("next__button");
 
 CarouselControlPrev.addEventListener("click" , isTheFirstSlide);
 CarouselControlNext.addEventListener("click" , isTheLastSlide);
+window.addEventListener("load" , () => {
+    var OneLeftLastChild = QuestionsContainerChildren.item(QuestionsContainerChildren.length - 2);
+    if(OneLeftLastChild == null){
+        CarouselControlNext.disabled = true;
+        CarouselControlNext.disabled = true;
+    }
+})
 
 function isTheFirstSlide(){
     var isTheFirstSlide = CheckThatIsFirst();
@@ -35,3 +42,4 @@ function CheckThatIsLast(){
         return false
     }
 }
+
