@@ -235,7 +235,11 @@
 
     var DataWithObjectType = JSON.parse(dataWithJsonType);
     var QuestionsContainer = document.getElementById("questions__container");
-    window.addEventListener("load" , MakeSlidePages);
+    var CheckAnswerPart = document.getElementById("check__answer__part")
+    window.addEventListener("load" , () => {
+      MakeSlidePages()
+      MakeAnswerContainer()
+    });
 
     function MakeSlidePages(){
         var ContainerAllValue = '';
@@ -252,7 +256,7 @@
             var formValue = ``;
             for(var j = 0; j < DataWithObjectType[i].answers.length; j++){
               var FormInput = `<input type="radio" id="form__${i + 1}__question__${j + 1}" name="form__${i + 1}" class="me-2">`; 
-              var FormLable = `<label for="from__${i + 1}__question__${j + 1}">${DataWithObjectType[i].answers[j]}</label>`;
+              var FormLable = `<label for="form__${i + 1}__question__${j + 1}">${DataWithObjectType[i].answers[j].answerValue}</label>`;
               formValue += StartDivTag + FormInput + FormLable + EndDivTag;
             }
             var SliderValues = `
@@ -267,6 +271,28 @@
             ContainerAllValue += SliderValues;
         }
         QuestionsContainer.innerHTML = ContainerAllValue;
+    }
+
+    function MakeAnswerContainer(){
+      var ContainerAllValue = "";
+      var StartDivTagForCheckPart = `<div class="answer__container d-flex flex-row justify-content-between flex-wrap">`;
+      var EndDivTag = `</div>`;
+      for(var i = 0; i < DataWithObjectType.length; i++){
+        var H3ForCheckPart = `<h3 class="text-white question">Q Number ${i + 1}:</h3>`;
+        var AnswersContainer = ``;
+        for(var j = 0; j < DataWithObjectType[i].answers.length; j++){
+          var ABC = ["A" , "B" , "C" , "D"];
+          var answer = `<div class="answers text-white d-flex justify-content-center align-items-center">${ABC[j]}</div>`;
+          AnswersContainer += answer;
+        }
+        ContainerAllValue = `
+        ${StartDivTagForCheckPart}
+          ${H3ForCheckPart}
+          ${AnswersContainer}
+        ${EndDivTag}
+        `
+        CheckAnswerPart.innerHTML += ContainerAllValue;
+      }
     }
     // i dont want to move from the first slide to the last slide
     var CarouselControlPrev = document.getElementById("previous__button");
