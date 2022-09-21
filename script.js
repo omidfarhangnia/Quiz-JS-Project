@@ -239,20 +239,25 @@
     window.addEventListener("load" , () => {
       MakeSlidePages()
       MakeAnswerContainer()
+      var OneLeftLastChild = QuestionsContainerChildren.item(QuestionsContainerChildren.length - 2);
+      if(OneLeftLastChild == null){
+          CarouselControlNext.disabled = true;
+          CarouselControlNext.disabled = true;
+      }
     });
 
     function MakeSlidePages(){
         var ContainerAllValue = '';
         var StartDivTagWithCarouselStyles = `<div class="carousel-item">`;
         var FirstStartDivTagWithCarouselStyles = `<div class="carousel-item active">`;
-        var StartDivTag = `<div>`;
+        var StartDivTag = `<div onclick="FindYourSelfInCheckPart(this)">`;
         var EndDivTag  = `</div>`;
         var StartFormTag = ``;
         var EndFormTag = `</form>`;
         for(var i = 0; i < DataWithObjectType.length; i++){
             var HeaderTagForCarousel = `<h2 class="mb-4">Question Number ${i + 1}</h2>`;
             var PragTagForCarousel = `<p class="mb-4 text-center">${DataWithObjectType[i].question}</p>`;
-            var StartFormTag = `<form class="question__form__num${i + 1} d-flex flex-column">`;
+            var StartFormTag = `<form class="question__form question__form__num${i + 1} d-flex flex-column">`;
             var formValue = ``;
             for(var j = 0; j < DataWithObjectType[i].answers.length; j++){
               var ABC = ["A" , "B" , "C" , "D"]
@@ -302,13 +307,6 @@
   
     CarouselControlPrev.addEventListener("click" , isTheFirstSlide);
     CarouselControlNext.addEventListener("click" , isTheLastSlide);
-    window.addEventListener("load" , () => {
-        var OneLeftLastChild = QuestionsContainerChildren.item(QuestionsContainerChildren.length - 2);
-        if(OneLeftLastChild == null){
-            CarouselControlNext.disabled = true;
-            CarouselControlNext.disabled = true;
-        }
-    })
     
     function isTheFirstSlide(){
         var isTheFirstSlide = CheckThatIsFirst();
@@ -338,4 +336,9 @@
         }else{
             return false
         }
+    }
+
+    // making connection between question part and check par
+    function FindYourSelfInCheckPart(Element){
+      console.log(Element)
     }
