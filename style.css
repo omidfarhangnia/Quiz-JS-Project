@@ -58,6 +58,12 @@ form[class *= "question__form__num"]{
     border-radius: 10px;
     padding: 10px 5px;
 }
+input{
+    width: 24px;
+    background: red;
+    height: 25px;
+    transform: translate(0px, 3px);
+}
 @media (min-width: 768px) and (max-width:1200px){
     .question{
         width: 20%;
