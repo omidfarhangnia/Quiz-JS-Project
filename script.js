@@ -232,7 +232,6 @@
         ]
     }
     ]`;
-
     var DataWithObjectType = JSON.parse(dataWithJsonType);
     var QuestionsContainer = document.getElementById("questions__container");
     var CheckAnswerPart = document.getElementById("check__answer__part")
@@ -245,7 +244,6 @@
           CarouselControlNext.disabled = true;
       }
     });
-
     function MakeSlidePages(){
         var ContainerAllValue = '';
         var StartDivTagWithCarouselStyles = `<div class="carousel-item">`;
@@ -278,7 +276,6 @@
         }
         QuestionsContainer.innerHTML = ContainerAllValue;
     }
-
     function MakeAnswerContainer(){
       var ContainerAllValue = "";
       var StartDivTagForCheckPart = `<div class="answer__container d-flex flex-row justify-content-between flex-wrap">`;
@@ -304,10 +301,8 @@
     var CarouselControlPrev = document.getElementById("previous__button");
     var QuestionsContainerChildren = document.getElementById("questions__container").children;
     var CarouselControlNext = document.getElementById("next__button");
-  
     CarouselControlPrev.addEventListener("click" , isTheFirstSlide);
     CarouselControlNext.addEventListener("click" , isTheLastSlide);
-    
     function isTheFirstSlide(){
         var isTheFirstSlide = CheckThatIsFirst();
         CarouselControlNext.disabled = false;
@@ -320,7 +315,6 @@
         if(isTheLastSlide == false) return;
         CarouselControlNext.disabled = true;
     }
-    
     function CheckThatIsFirst(){
         var secondChild = QuestionsContainerChildren.item(1);
         if(secondChild.classList.contains("active")){
@@ -337,7 +331,6 @@
             return false
         }
     }
-
     // making connection between question part and check par
     function FindYourSelfInCheckPart(Element){
       console.log(Element)
