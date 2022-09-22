@@ -259,7 +259,7 @@
             var formValue = ``;
             for(var j = 0; j < DataWithObjectType[i].answers.length; j++){
               var ABC = ["A" , "B" , "C" , "D"]
-              var FormInput = `<input type="radio" id="form__${i + 1}__question__${j + 1}" name="form__${i + 1}" class="me-2">`; 
+              var FormInput = `<input type="radio" id="question__${i + 1}__answer__${j + 1}" name="form__${i + 1}" class="me-2">`; 
               var FormLable = `<label for="form__${i + 1}__question__${j + 1}">${ABC[j]} : ${DataWithObjectType[i].answers[j].answerValue}</label>`;
               formValue += StartDivTag + FormInput + FormLable + EndDivTag;
             }
@@ -335,7 +335,7 @@
     function FindYourSelfInCheckPart(Element){
       var ElementInput = Element.firstChild;
       var ElementInputId = ElementInput.getAttribute("id")
-      var FormNumber = ElementInputId.match(/^(form__)(\d+)/gm)[0];
-      var QuestionNumber = ElementInputId.match(/(question__)(\d+)$/gm)[0];
+      var FormNumber = ElementInputId.match(/^(question__)(\d+)/gm)[0];
+      var QuestionNumber = ElementInputId.match(/(answer__)(\d+)$/gm)[0];
       console.log(`${FormNumber}  ${QuestionNumber}`)
     }
