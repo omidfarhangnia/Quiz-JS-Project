@@ -278,14 +278,14 @@
     }
     function MakeAnswerContainer(){
       var ContainerAllValue = "";
-      var StartDivTagForCheckPart = `<div class="answer__container d-flex flex-row justify-content-between flex-wrap">`;
       var EndDivTag = `</div>`;
       for(var i = 0; i < DataWithObjectType.length; i++){
         var H3ForCheckPart = `<h3 class="text-white question">Q Number ${i + 1}:</h3>`;
+        var StartDivTagForCheckPart = `<div class="answer__container d-flex flex-row justify-content-between flex-wrap question__${i + 1}">`;
         var AnswersContainer = ``;
         for(var j = 0; j < DataWithObjectType[i].answers.length; j++){
           var ABC = ["A" , "B" , "C" , "D"];
-          var answer = `<div class="answers text-white d-flex justify-content-center align-items-center">${ABC[j]}</div>`;
+          var answer = `<div class="answers text-white d-flex justify-content-center align-items-center answer__${j + 1}">${ABC[j]}</div>`;
           AnswersContainer += answer;
         }
         ContainerAllValue = `
@@ -333,5 +333,9 @@
     }
     // making connection between question part and check par
     function FindYourSelfInCheckPart(Element){
-      console.log(Element)
+      var ElementInput = Element.firstChild;
+      var ElementInputId = ElementInput.getAttribute("id")
+      var FormNumber = ElementInputId.match(/^(form__)(\d+)/gm)[0];
+      var QuestionNumber = ElementInputId.match(/(question__)(\d+)$/gm)[0];
+      console.log(`${FormNumber}  ${QuestionNumber}`)
     }
