@@ -64,6 +64,9 @@ input{
     height: 25px;
     transform: translate(0px, 3px);
 }
+.Current__Choosen__Answer{
+    background: lightblue;
+}
 @media (min-width: 768px) and (max-width:1200px){
     .question{
         width: 20%;
