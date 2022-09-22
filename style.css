@@ -50,7 +50,7 @@
     color: white;
 }
 form[class *= "question__form__num"]{
-    font-size: 26px;
+    font-size: 22px;
 }
 .carousel-item > p{
     height: 100px;
@@ -60,12 +60,11 @@ form[class *= "question__form__num"]{
 }
 input{
     width: 24px;
-    background: red;
-    height: 25px;
+    height: 24px;
     transform: translate(0px, 3px);
 }
 .Current__Choosen__Answer{
-    background: lightblue;
+    background: #0d6efd;
 }
 @media (min-width: 768px) and (max-width:1200px){
     .question{
@@ -83,5 +82,17 @@ input{
     }
     #question__part{
         height: 100vh;
+    }
+}
+@media (max-width: 500px) {
+    form[class *= "question__form__num"] , .carousel-item > p{
+        font-size: 15px;
+    }
+    input{
+        width: 16px;
+        height: 16px;
+    }
+    .carousel-item > h2{
+        font-size: 20px !important;
     }
 }
