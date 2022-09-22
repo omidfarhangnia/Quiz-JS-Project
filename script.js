@@ -335,7 +335,29 @@
     function FindYourSelfInCheckPart(Element){
       var ElementInput = Element.firstChild;
       var ElementInputId = ElementInput.getAttribute("id")
-      var FormNumber = ElementInputId.match(/^(question__)(\d+)/gm)[0];
-      var QuestionNumber = ElementInputId.match(/(answer__)(\d+)$/gm)[0];
-      console.log(`${FormNumber}  ${QuestionNumber}`)
+      var QuestionNumber = ElementInputId.match(/^(question__)(\d+)/gm)[0];
+      // it will return something like this question__1
+      var AnswerNumber = ElementInputId.match(/(answer__)(\d+)$/gm)[0];
+      // it will return something like this answer__3
+
+      // var TheWantedElement = ReturnTheWantedElement(QuestionNumber , AnswerNumber);
+      ReturnTheWantedElement(QuestionNumber , AnswerNumber);
+    }
+
+    function ReturnTheWantedElement(QuestionNumber , AnswerNumber){
+      var TheWantedQuestion = document.querySelector(`.${QuestionNumber }`);
+      RemoveSelectedStyleOfAll(TheWantedQuestion)
+      var TheWantedAnswer = TheWantedQuestion.querySelector(`.${AnswerNumber}`);
+      AddSelectedStyleToAnswer(TheWantedAnswer)
+    }
+    function RemoveSelectedStyleOfAll(TheWantedQuestion){
+      var AllChild = TheWantedQuestion.children;
+      var TheNumberOfTestAnswers = 4;
+      for(var i = 0; i < TheNumberOfTestAnswers; i++){
+        AllChild[i + 1].classList.remove("Current__Choosen__Answer")
+        // i should skip the header of the all test the header is [0] and answers are [1] , [2] , [3] , [4]
+      }
+    }
+    function AddSelectedStyleToAnswer(TheWantedAnswer){
+      
     }
