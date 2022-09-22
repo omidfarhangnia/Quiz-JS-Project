@@ -260,7 +260,7 @@
             for(var j = 0; j < DataWithObjectType[i].answers.length; j++){
               var ABC = ["A" , "B" , "C" , "D"]
               var FormInput = `<input type="radio" id="question__${i + 1}__answer__${j + 1}" name="form__${i + 1}" class="me-2">`; 
-              var FormLable = `<label for="form__${i + 1}__question__${j + 1}">${ABC[j]} : ${DataWithObjectType[i].answers[j].answerValue}</label>`;
+              var FormLable = `<label for="question__${i + 1}__answer__${j + 1}">${ABC[j]} : ${DataWithObjectType[i].answers[j].answerValue}</label>`;
               formValue += StartDivTag + FormInput + FormLable + EndDivTag;
             }
             var SliderValues = `
