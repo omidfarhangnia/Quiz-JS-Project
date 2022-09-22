@@ -359,5 +359,5 @@
       }
     }
     function AddSelectedStyleToAnswer(TheWantedAnswer){
-      
+      TheWantedAnswer.classList.add("Current__Choosen__Answer");
     }
