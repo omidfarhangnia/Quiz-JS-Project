@@ -70,6 +70,20 @@ input{
     background: #ffee00;
     color: #000;
 }
+.result__page{
+    background: #000;
+    top: 0;
+}
+.result__page > div > h1 , .result__page > div > h3{
+    font-family: 'IBM Plex Sans' ,'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.result__page > div > h1{
+    font-size: 75px;
+    letter-spacing: 3px;
+}
+.result__page > div > h3{
+    font-size: 13px;
+}
 @media (min-width: 768px) and (max-width:1200px){
     .question{
         width: 20%;
