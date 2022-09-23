@@ -13,6 +13,27 @@
         },
         {
           "answerValue" : "this is third answer value",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "this is forth answer value",
+          "IsTrue": true
+        }
+      ]
+    },
+    {
+      "question": "This is Question Number ONE",
+      "answers": [
+        {
+          "answerValue" : "this is first answer value",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "this is second answer value",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "this is third answer value",
           "IsTrue": true
         },
         {
@@ -20,92 +41,9 @@
           "IsTrue": false
         }
       ]
-    } ,
-    {
-        "question": "This is Question Number TWO",
-        "answers": [
-          {
-            "answerValue" : "this is first answer value",
-            "IsTrue": false
-          },
-          {
-            "answerValue" : "this is second answer value",
-            "IsTrue": true
-          },
-          {
-            "answerValue" : "this is third answer value",
-            "IsTrue": false
-          },
-          {
-            "answerValue" : "this is forth answer value",
-            "IsTrue": false
-          }
-        ]
-    },
-    {
-        "question": "This is Question Number THREE",
-        "answers": [
-          {
-            "answerValue" : "this is first answer value",
-            "IsTrue": false
-          },
-          {
-            "answerValue" : "this is second answer value",
-            "IsTrue": true
-          },
-          {
-            "answerValue" : "this is third answer value",
-            "IsTrue": false
-          },
-          {
-            "answerValue" : "this is forth answer value",
-            "IsTrue": false
-          }
-        ]
-    },
-    {
-        "question": "This is Question Number FOUR",
-        "answers": [
-          {
-            "answerValue" : "this is first answer value",
-            "IsTrue": false
-          },
-          {
-            "answerValue" : "this is second answer value",
-            "IsTrue": false
-          },
-          {
-            "answerValue" : "this is third answer value",
-            "IsTrue": true
-          },
-          {
-            "answerValue" : "this is forth answer value",
-            "IsTrue": false
-          }
-        ]
-    },
-    {
-        "question": "This is Question Number FIVE",
-        "answers": [
-          {
-            "answerValue" : "this is first answer value",
-            "IsTrue": true
-          },
-          {
-            "answerValue" : "this is second answer value",
-            "IsTrue": false
-          },
-          {
-            "answerValue" : "this is third answer value",
-            "IsTrue": false
-          },
-          {
-            "answerValue" : "this is forth answer value",
-            "IsTrue": false
-          }
-        ]
     }
     ]`;
+    var ABC = ["A" , "B" , "C" , "D"]
     var DataWithObjectType = JSON.parse(dataWithJsonType);
     var QuestionsContainer = document.getElementById("questions__container");
     var CheckAnswerPart = document.getElementById("check__answer__part")
@@ -116,6 +54,7 @@
       if(OneLeftLastChild == null){
           CarouselControlNext.disabled = true;
           CarouselControlNext.disabled = true;
+          GetScoreButton.classList.remove("d-none");
       }
     });
     function MakeSlidePages(){
@@ -132,7 +71,6 @@
             var StartFormTag = `<form class="question__form question__form__num${i + 1} d-flex flex-column">`;
             var formValue = ``;
             for(var j = 0; j < DataWithObjectType[i].answers.length; j++){
-              var ABC = ["A" , "B" , "C" , "D"]
               var FormInput = `<input type="radio" id="question__${i + 1}__answer__${j + 1}" name="form__${i + 1}" class="me-2">`; 
               var FormLable = `<label for="question__${i + 1}__answer__${j + 1}">${ABC[j]} : ${DataWithObjectType[i].answers[j].answerValue}</label>`;
               formValue += StartDivTag + FormInput + FormLable + EndDivTag;
@@ -158,7 +96,6 @@
         var StartDivTagForCheckPart = `<div class="answer__container d-flex flex-row justify-content-between flex-wrap question__${i + 1}">`;
         var AnswersContainer = ``;
         for(var j = 0; j < DataWithObjectType[i].answers.length; j++){
-          var ABC = ["A" , "B" , "C" , "D"];
           var answer = `<div class="answers text-white d-flex justify-content-center align-items-center answer__${j + 1}">${ABC[j]}</div>`;
           AnswersContainer += answer;
         }
@@ -220,7 +157,6 @@
       // var TheWantedElement = ReturnTheWantedElement(QuestionNumber , AnswerNumber);
       ReturnTheWantedElement(QuestionNumber , AnswerNumber);
     }
-
     function ReturnTheWantedElement(QuestionNumber , AnswerNumber){
       var TheWantedQuestion = document.querySelector(`.${QuestionNumber }`);
       RemoveSelectedStyleOfAll(TheWantedQuestion)
@@ -238,4 +174,44 @@
     function AddSelectedStyleToAnswer(TheWantedAnswer){
       TheWantedAnswer.classList.add("Current__Choosen__Answer");
     }
-    
+    GetScoreButton.addEventListener("click" , () => {
+      IsEmptyQuestion();
+      // این فانکشن چک میکنه که چند سوال بی جواب وجود دارند
+    })
+    function IsEmptyQuestion(){
+      var TheNumberOfAnswers = document.querySelectorAll(".Current__Choosen__Answer").length;
+      // این مقدار حاوی تعداد گزینه هایی هست که کاربر انتخاب کرده
+      var TheNumberOfQuestion = DataWithObjectType.length;
+      // این مقدار حاوی تعداد کل سوالات هست
+      var QuestionsWithOutAnswer = TheNumberOfQuestion - TheNumberOfAnswers;
+      if(QuestionsWithOutAnswer > 0){
+        var isItOk = window.confirm(`Warning : You did not answer to ${QuestionsWithOutAnswer} question. You will loose the score of the answer. If you want to get your score confirm.`);
+        if(isItOk == true){
+          GetTheScore()
+        }else{
+          return;
+        }
+      }else{
+        GetTheScore()
+      }
+    }
+    function GetTheScore(){
+      var TrueAnswers = [];
+      for(var i = 0; i < DataWithObjectType.length; i++){
+        for(var j = 0; j < DataWithObjectType[i].answers.length; j++){
+          if(DataWithObjectType[i].answers[j].IsTrue == true){
+            TrueAnswers.push(ABC[j]);
+          }
+        }
+      }
+      CheckTrueAnswersVSUserAnswers(TrueAnswers)
+    }
+    function CheckTrueAnswersVSUserAnswers(TrueAnswers){
+        var AllTheSelectedAnswer = document.querySelectorAll(".Current__Choosen__Answer");
+        var GetTheTextInSelectedAnswer = [];
+        AllTheSelectedAnswer.forEach(element => {
+          GetTheTextInSelectedAnswer.push(element.innerHTML)
+        });
+        console.log(TrueAnswers)
+        console.log(GetTheTextInSelectedAnswer)
+    }
