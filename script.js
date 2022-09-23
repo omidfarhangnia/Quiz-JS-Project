@@ -104,132 +104,6 @@
             "IsTrue": false
           }
         ]
-    },
-    {
-        "question": "This is Question Number SIX",
-        "answers": [
-          {
-            "answerValue" : "this is first answer value",
-            "IsTrue": false
-          },
-          {
-            "answerValue" : "this is second answer value",
-            "IsTrue": false
-          },
-          {
-            "answerValue" : "this is third answer value",
-            "IsTrue": false
-          },
-          {
-            "answerValue" : "this is forth answer value",
-            "IsTrue": true
-          }
-        ]
-    },
-    {
-        "question": "This is Question Number SEVEN",
-        "answers": [
-          {
-            "answerValue" : "this is first answer value",
-            "IsTrue": false
-          },
-          {
-            "answerValue" : "this is second answer value",
-            "IsTrue": false
-          },
-          {
-            "answerValue" : "this is third answer value",
-            "IsTrue": false
-          },
-          {
-            "answerValue" : "this is forth answer value",
-            "IsTrue": true
-          }
-        ]
-    },
-    {
-        "question": "This is Question Number EIGHT",
-        "answers": [
-          {
-            "answerValue" : "this is first answer value",
-            "IsTrue": false
-          },
-          {
-            "answerValue" : "this is second answer value",
-            "IsTrue": true
-          },
-          {
-            "answerValue" : "this is third answer value",
-            "IsTrue": false
-          },
-          {
-            "answerValue" : "this is forth answer value",
-            "IsTrue": false
-          }
-        ]
-    },
-    {
-        "question": "This is Question Number NINE",
-        "answers": [
-          {
-            "answerValue" : "this is first answer value",
-            "IsTrue": true
-          },
-          {
-            "answerValue" : "this is second answer value",
-            "IsTrue": false
-          },
-          {
-            "answerValue" : "this is third answer value",
-            "IsTrue": false
-          },
-          {
-            "answerValue" : "this is forth answer value",
-            "IsTrue": false
-          }
-        ]
-    },
-    {
-        "question": "This is Question Number TEN",
-        "answers": [
-          {
-            "answerValue" : "this is first answer value",
-            "IsTrue": false
-          },
-          {
-            "answerValue" : "this is second answer value",
-            "IsTrue": false
-          },
-          {
-            "answerValue" : "this is third answer value",
-            "IsTrue": false
-          },
-          {
-            "answerValue" : "this is forth answer value",
-            "IsTrue": true
-          }
-        ]
-    },
-    {
-        "question": "This is Question Number ELEVEN",
-        "answers": [
-          {
-            "answerValue" : "this is first answer value",
-            "IsTrue": false
-          },
-          {
-            "answerValue" : "this is second answer value",
-            "IsTrue": true
-          },
-          {
-            "answerValue" : "this is third answer value",
-            "IsTrue": false
-          },
-          {
-            "answerValue" : "this is forth answer value",
-            "IsTrue": false
-          }
-        ]
     }
     ]`;
     var DataWithObjectType = JSON.parse(dataWithJsonType);
@@ -301,11 +175,13 @@
     var CarouselControlPrev = document.getElementById("previous__button");
     var QuestionsContainerChildren = document.getElementById("questions__container").children;
     var CarouselControlNext = document.getElementById("next__button");
+    var GetScoreButton = document.getElementById("GetScore__button");
     CarouselControlPrev.addEventListener("click" , isTheFirstSlide);
     CarouselControlNext.addEventListener("click" , isTheLastSlide);
     function isTheFirstSlide(){
         var isTheFirstSlide = CheckThatIsFirst();
         CarouselControlNext.disabled = false;
+        GetScoreButton.classList.add("d-none");
         if(isTheFirstSlide == false) return;
         CarouselControlPrev.disabled = true;
     }
@@ -314,6 +190,7 @@
         CarouselControlPrev.disabled = false;
         if(isTheLastSlide == false) return;
         CarouselControlNext.disabled = true;
+        GetScoreButton.classList.remove("d-none");
     }
     function CheckThatIsFirst(){
         var secondChild = QuestionsContainerChildren.item(1);
@@ -361,3 +238,4 @@
     function AddSelectedStyleToAnswer(TheWantedAnswer){
       TheWantedAnswer.classList.add("Current__Choosen__Answer");
     }
+    
