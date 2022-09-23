@@ -258,8 +258,5 @@
     const AnotherTestButton = document.getElementById("AnotherTestButton");
     AnotherTestButton.addEventListener("click" , ShowTest)
     function ShowTest(){
-      result__page.classList.add("d-none");
-      TheNumberOfQuestions.innerHTML = 0;
-      TheNumberOfCorrectAnswers.innerHTML = 0;
-      TheNumberOfQuestionWithOutAnswer.innerHTML = 0;
+      window.location.reload()
     }
