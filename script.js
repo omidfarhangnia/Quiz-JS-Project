@@ -1,44 +1,107 @@
     // going for auto making slide
     var dataWithJsonType = `[
     {
-      "question": "This is Question Number ONE",
+      "question": "Which one is fruit?",
       "answers": [
         {
-          "answerValue" : "this is first answer value",
+          "answerValue" : "Car",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "Bus",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "Orange",
           "IsTrue": true
         },
         {
-          "answerValue" : "this is second answer value",
-          "IsTrue": false
-        },
-        {
-          "answerValue" : "this is third answer value",
-          "IsTrue": false
-        },
-        {
-          "answerValue" : "this is forth answer value",
+          "answerValue" : "Bag",
           "IsTrue": false
         }
       ]
     },
     {
-      "question": "This is Question Number ONE",
+      "question": "Which one is fruit?",
       "answers": [
         {
-          "answerValue" : "this is first answer value",
-          "IsTrue": false
-        },
-        {
-          "answerValue" : "this is second answer value",
+          "answerValue" : "Apple",
           "IsTrue": true
         },
         {
-          "answerValue" : "this is third answer value",
+          "answerValue" : "Bag",
           "IsTrue": false
         },
         {
-          "answerValue" : "this is forth answer value",
+          "answerValue" : "Class",
           "IsTrue": false
+        },
+        {
+          "answerValue" : "Car",
+          "IsTrue": false
+        }
+      ]
+    },
+    {
+      "question": "Which one is fruit?",
+      "answers": [
+        {
+          "answerValue" : "Banana",
+          "IsTrue": true
+        },
+        {
+          "answerValue" : "Bag",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "Class",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "Car",
+          "IsTrue": false
+        }
+      ]
+    },
+    {
+      "question": "Which one is fruit?",
+      "answers": [
+        {
+          "answerValue" : "Rock",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "Bag",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "Apple",
+          "IsTrue": true
+        },
+        {
+          "answerValue" : "Car",
+          "IsTrue": false
+        }
+      ]
+    },
+    {
+      "question": "Which one is fruit?",
+      "answers": [
+        {
+          "answerValue" : "Computer",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "Bag",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "Class",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "Lemon",
+          "IsTrue": true
         }
       ]
     }
