@@ -5,7 +5,7 @@
       "answers": [
         {
           "answerValue" : "this is first answer value",
-          "IsTrue": false
+          "IsTrue": true
         },
         {
           "answerValue" : "this is second answer value",
@@ -14,27 +14,6 @@
         {
           "answerValue" : "this is third answer value",
           "IsTrue": false
-        },
-        {
-          "answerValue" : "this is forth answer value",
-          "IsTrue": true
-        }
-      ]
-    },
-    {
-      "question": "This is Question Number ONE",
-      "answers": [
-        {
-          "answerValue" : "this is first answer value",
-          "IsTrue": false
-        },
-        {
-          "answerValue" : "this is second answer value",
-          "IsTrue": false
-        },
-        {
-          "answerValue" : "this is third answer value",
-          "IsTrue": true
         },
         {
           "answerValue" : "this is forth answer value",
@@ -51,200 +30,11 @@
         },
         {
           "answerValue" : "this is second answer value",
-          "IsTrue": false
-        },
-        {
-          "answerValue" : "this is third answer value",
           "IsTrue": true
         },
         {
-          "answerValue" : "this is forth answer value",
-          "IsTrue": false
-        }
-      ]
-    },
-    {
-      "question": "This is Question Number ONE",
-      "answers": [
-        {
-          "answerValue" : "this is first answer value",
-          "IsTrue": false
-        },
-        {
-          "answerValue" : "this is second answer value",
-          "IsTrue": false
-        },
-        {
           "answerValue" : "this is third answer value",
-          "IsTrue": true
-        },
-        {
-          "answerValue" : "this is forth answer value",
           "IsTrue": false
-        }
-      ]
-    },
-    {
-      "question": "This is Question Number ONE",
-      "answers": [
-        {
-          "answerValue" : "this is first answer value",
-          "IsTrue": false
-        },
-        {
-          "answerValue" : "this is second answer value",
-          "IsTrue": false
-        },
-        {
-          "answerValue" : "this is third answer value",
-          "IsTrue": true
-        },
-        {
-          "answerValue" : "this is forth answer value",
-          "IsTrue": false
-        }
-      ]
-    },
-    {
-      "question": "This is Question Number ONE",
-      "answers": [
-        {
-          "answerValue" : "this is first answer value",
-          "IsTrue": false
-        },
-        {
-          "answerValue" : "this is second answer value",
-          "IsTrue": false
-        },
-        {
-          "answerValue" : "this is third answer value",
-          "IsTrue": true
-        },
-        {
-          "answerValue" : "this is forth answer value",
-          "IsTrue": false
-        }
-      ]
-    },
-    {
-      "question": "This is Question Number ONE",
-      "answers": [
-        {
-          "answerValue" : "this is first answer value",
-          "IsTrue": false
-        },
-        {
-          "answerValue" : "this is second answer value",
-          "IsTrue": false
-        },
-        {
-          "answerValue" : "this is third answer value",
-          "IsTrue": true
-        },
-        {
-          "answerValue" : "this is forth answer value",
-          "IsTrue": false
-        }
-      ]
-    },
-    {
-      "question": "This is Question Number ONE",
-      "answers": [
-        {
-          "answerValue" : "this is first answer value",
-          "IsTrue": false
-        },
-        {
-          "answerValue" : "this is second answer value",
-          "IsTrue": false
-        },
-        {
-          "answerValue" : "this is third answer value",
-          "IsTrue": true
-        },
-        {
-          "answerValue" : "this is forth answer value",
-          "IsTrue": false
-        }
-      ]
-    },
-    {
-      "question": "This is Question Number ONE",
-      "answers": [
-        {
-          "answerValue" : "this is first answer value",
-          "IsTrue": false
-        },
-        {
-          "answerValue" : "this is second answer value",
-          "IsTrue": false
-        },
-        {
-          "answerValue" : "this is third answer value",
-          "IsTrue": true
-        },
-        {
-          "answerValue" : "this is forth answer value",
-          "IsTrue": false
-        }
-      ]
-    },
-    {
-      "question": "This is Question Number ONE",
-      "answers": [
-        {
-          "answerValue" : "this is first answer value",
-          "IsTrue": false
-        },
-        {
-          "answerValue" : "this is second answer value",
-          "IsTrue": false
-        },
-        {
-          "answerValue" : "this is third answer value",
-          "IsTrue": true
-        },
-        {
-          "answerValue" : "this is forth answer value",
-          "IsTrue": false
-        }
-      ]
-    },
-    {
-      "question": "This is Question Number ONE",
-      "answers": [
-        {
-          "answerValue" : "this is first answer value",
-          "IsTrue": false
-        },
-        {
-          "answerValue" : "this is second answer value",
-          "IsTrue": false
-        },
-        {
-          "answerValue" : "this is third answer value",
-          "IsTrue": true
-        },
-        {
-          "answerValue" : "this is forth answer value",
-          "IsTrue": false
-        }
-      ]
-    },
-    {
-      "question": "This is Question Number ONE",
-      "answers": [
-        {
-          "answerValue" : "this is first answer value",
-          "IsTrue": false
-        },
-        {
-          "answerValue" : "this is second answer value",
-          "IsTrue": false
-        },
-        {
-          "answerValue" : "this is third answer value",
-          "IsTrue": true
         },
         {
           "answerValue" : "this is forth answer value",
@@ -442,6 +232,15 @@
         return UserAnswersSymbols;
     }
     function CheckUserVSTrueAnswers(TrueAnswers , UserAnswers){
-      console.log(TrueAnswers)
-      console.log(UserAnswers)
+      var NumberOfQuestion = TrueAnswers.length;
+      var CorrectAnswers = 0;
+      for(var i = 0; i < NumberOfQuestion; i++){
+        if(TrueAnswers[i].TestSym == UserAnswers[i].TestSym) {
+          CorrectAnswers++
+        }
+      }
+      ShowResult(NumberOfQuestion , CorrectAnswers)
+    }
+    function ShowResult(NumberOfQuestion , CorrectAnswers){
+      
     }
