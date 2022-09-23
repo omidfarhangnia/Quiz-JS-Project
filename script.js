@@ -232,15 +232,27 @@
         return UserAnswersSymbols;
     }
     function CheckUserVSTrueAnswers(TrueAnswers , UserAnswers){
-      var NumberOfQuestion = TrueAnswers.length;
-      var CorrectAnswers = 0;
-      for(var i = 0; i < NumberOfQuestion; i++){
+      var NumberOfQuestions = TrueAnswers.length;
+      var NumberOfCorrectAnswers = 0;
+      var NumberOfQuestionWithOutAnswer = 0;
+      for(var i = 0; i < NumberOfQuestions; i++){
         if(TrueAnswers[i].TestSym == UserAnswers[i].TestSym) {
-          CorrectAnswers++
+          NumberOfCorrectAnswers++
+        }
+        if(UserAnswers[i].TestSym == null){
+          NumberOfQuestionWithOutAnswer++
         }
       }
-      ShowResult(NumberOfQuestion , CorrectAnswers)
+      ShowResult(NumberOfQuestions , NumberOfCorrectAnswers , NumberOfQuestionWithOutAnswer)
     }
-    function ShowResult(NumberOfQuestion , CorrectAnswers){
+    const result__page = document.getElementById("result__page");
+    const TheNumberOfCorrectAnswers = document.getElementById("NumberOfCorrectAnswers");
+    const TheNumberOfQuestions = document.getElementById("NumberOfQuestions");
+    const TheNumberOfQuestionWithOutAnswer = document.getElementById("TheNumberOfQuestionWithOutAnswer");
       
+    function ShowResult(NumberOfQuestions , NumberOfCorrectAnswers , NumberOfQuestionWithOutAnswer){
+      result__page.classList.remove("d-none");
+      TheNumberOfQuestions.innerHTML = NumberOfQuestions;
+      TheNumberOfCorrectAnswers.innerHTML = NumberOfCorrectAnswers;
+      TheNumberOfQuestionWithOutAnswer.innerHTML = NumberOfQuestionWithOutAnswer;
     }
