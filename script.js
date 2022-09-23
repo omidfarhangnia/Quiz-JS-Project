@@ -200,7 +200,10 @@
       for(var i = 0; i < DataWithObjectType.length; i++){
         for(var j = 0; j < DataWithObjectType[i].answers.length; j++){
           if(DataWithObjectType[i].answers[j].IsTrue == true){
-            TrueAnswers.push(ABC[j]);
+            TrueAnswers.push({
+              questionNum : `${i + 1}`,
+              TestSym : ABC[j]
+            });
           }
         }
       }
@@ -216,5 +219,7 @@
         return UserAnswersSymbols;
     }
     function CheckUserVSTrueAnswers(TrueAnswers , UserAnswers){
-
+      // for(var i )
+      console.log(TrueAnswers)
+      console.log(UserAnswers)
     }
