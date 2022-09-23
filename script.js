@@ -204,14 +204,17 @@
           }
         }
       }
-      CheckTrueAnswersVSUserAnswers(TrueAnswers)
+      var UserAnswers = returnTheUserAnswers();
+      CheckUserVSTrueAnswers(TrueAnswers , UserAnswers);
     }
-    function CheckTrueAnswersVSUserAnswers(TrueAnswers){
-        var AllTheSelectedAnswer = document.querySelectorAll(".Current__Choosen__Answer");
-        var GetTheTextInSelectedAnswer = [];
-        AllTheSelectedAnswer.forEach(element => {
-          GetTheTextInSelectedAnswer.push(element.innerHTML)
-        });
-        console.log(TrueAnswers)
-        console.log(GetTheTextInSelectedAnswer)
+    function returnTheUserAnswers(){
+        var UserAnswers = document.querySelectorAll(".Current__Choosen__Answer");
+        var UserAnswersSymbols = [];
+        UserAnswers.forEach(element => {
+          UserAnswersSymbols.push(element.innerHTML)
+        })
+        return UserAnswersSymbols;
+    }
+    function CheckUserVSTrueAnswers(TrueAnswers , UserAnswers){
+
     }
