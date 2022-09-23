@@ -41,6 +41,216 @@
           "IsTrue": false
         }
       ]
+    },
+    {
+      "question": "This is Question Number ONE",
+      "answers": [
+        {
+          "answerValue" : "this is first answer value",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "this is second answer value",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "this is third answer value",
+          "IsTrue": true
+        },
+        {
+          "answerValue" : "this is forth answer value",
+          "IsTrue": false
+        }
+      ]
+    },
+    {
+      "question": "This is Question Number ONE",
+      "answers": [
+        {
+          "answerValue" : "this is first answer value",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "this is second answer value",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "this is third answer value",
+          "IsTrue": true
+        },
+        {
+          "answerValue" : "this is forth answer value",
+          "IsTrue": false
+        }
+      ]
+    },
+    {
+      "question": "This is Question Number ONE",
+      "answers": [
+        {
+          "answerValue" : "this is first answer value",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "this is second answer value",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "this is third answer value",
+          "IsTrue": true
+        },
+        {
+          "answerValue" : "this is forth answer value",
+          "IsTrue": false
+        }
+      ]
+    },
+    {
+      "question": "This is Question Number ONE",
+      "answers": [
+        {
+          "answerValue" : "this is first answer value",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "this is second answer value",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "this is third answer value",
+          "IsTrue": true
+        },
+        {
+          "answerValue" : "this is forth answer value",
+          "IsTrue": false
+        }
+      ]
+    },
+    {
+      "question": "This is Question Number ONE",
+      "answers": [
+        {
+          "answerValue" : "this is first answer value",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "this is second answer value",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "this is third answer value",
+          "IsTrue": true
+        },
+        {
+          "answerValue" : "this is forth answer value",
+          "IsTrue": false
+        }
+      ]
+    },
+    {
+      "question": "This is Question Number ONE",
+      "answers": [
+        {
+          "answerValue" : "this is first answer value",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "this is second answer value",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "this is third answer value",
+          "IsTrue": true
+        },
+        {
+          "answerValue" : "this is forth answer value",
+          "IsTrue": false
+        }
+      ]
+    },
+    {
+      "question": "This is Question Number ONE",
+      "answers": [
+        {
+          "answerValue" : "this is first answer value",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "this is second answer value",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "this is third answer value",
+          "IsTrue": true
+        },
+        {
+          "answerValue" : "this is forth answer value",
+          "IsTrue": false
+        }
+      ]
+    },
+    {
+      "question": "This is Question Number ONE",
+      "answers": [
+        {
+          "answerValue" : "this is first answer value",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "this is second answer value",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "this is third answer value",
+          "IsTrue": true
+        },
+        {
+          "answerValue" : "this is forth answer value",
+          "IsTrue": false
+        }
+      ]
+    },
+    {
+      "question": "This is Question Number ONE",
+      "answers": [
+        {
+          "answerValue" : "this is first answer value",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "this is second answer value",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "this is third answer value",
+          "IsTrue": true
+        },
+        {
+          "answerValue" : "this is forth answer value",
+          "IsTrue": false
+        }
+      ]
+    },
+    {
+      "question": "This is Question Number ONE",
+      "answers": [
+        {
+          "answerValue" : "this is first answer value",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "this is second answer value",
+          "IsTrue": false
+        },
+        {
+          "answerValue" : "this is third answer value",
+          "IsTrue": true
+        },
+        {
+          "answerValue" : "this is forth answer value",
+          "IsTrue": false
+        }
+      ]
     }
     ]`;
     var ABC = ["A" , "B" , "C" , "D"]
@@ -211,15 +421,27 @@
       CheckUserVSTrueAnswers(TrueAnswers , UserAnswers);
     }
     function returnTheUserAnswers(){
-        var UserAnswers = document.querySelectorAll(".Current__Choosen__Answer");
+        var AllTheAnswerContianers = document.querySelectorAll(".answer__container");
         var UserAnswersSymbols = [];
-        UserAnswers.forEach(element => {
-          UserAnswersSymbols.push(element.innerHTML)
-        })
+        for(var i = 0; i < AllTheAnswerContianers.length; i++){
+          var AnswerContainers = AllTheAnswerContianers.item(i);
+          var ChoosenAnswer = AnswerContainers.querySelector(".Current__Choosen__Answer");
+          if(ChoosenAnswer == null){
+            UserAnswersSymbols.push({
+              questionNum : `${i + 1}`,
+              TestSym : null
+            });
+          }
+          else{
+            UserAnswersSymbols.push({
+              questionNum : `${i + 1}`,
+              TestSym : ChoosenAnswer.innerHTML
+            });
+          }
+        }
         return UserAnswersSymbols;
     }
     function CheckUserVSTrueAnswers(TrueAnswers , UserAnswers){
-      // for(var i )
       console.log(TrueAnswers)
       console.log(UserAnswers)
     }
