@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&display=swap');
 #check__answer__part{
     background: #000;
+    min-height: 200px;
     max-height: 200px;
     overflow-y: scroll;
     counter-reset: section;
