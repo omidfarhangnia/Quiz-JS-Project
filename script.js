@@ -249,10 +249,17 @@
     const TheNumberOfCorrectAnswers = document.getElementById("NumberOfCorrectAnswers");
     const TheNumberOfQuestions = document.getElementById("NumberOfQuestions");
     const TheNumberOfQuestionWithOutAnswer = document.getElementById("TheNumberOfQuestionWithOutAnswer");
-      
     function ShowResult(NumberOfQuestions , NumberOfCorrectAnswers , NumberOfQuestionWithOutAnswer){
       result__page.classList.remove("d-none");
       TheNumberOfQuestions.innerHTML = NumberOfQuestions;
       TheNumberOfCorrectAnswers.innerHTML = NumberOfCorrectAnswers;
       TheNumberOfQuestionWithOutAnswer.innerHTML = NumberOfQuestionWithOutAnswer;
+    }
+    const AnotherTestButton = document.getElementById("AnotherTestButton");
+    AnotherTestButton.addEventListener("click" , ShowTest)
+    function ShowTest(){
+      result__page.classList.add("d-none");
+      TheNumberOfQuestions.innerHTML = 0;
+      TheNumberOfCorrectAnswers.innerHTML = 0;
+      TheNumberOfQuestionWithOutAnswer.innerHTML = 0;
     }
