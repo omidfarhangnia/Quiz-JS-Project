@@ -66,6 +66,10 @@ input{
 .Current__Choosen__Answer{
     background: #0d6efd;
 }
+#GetScore__button{
+    background: #ffee00;
+    color: #000;
+}
 @media (min-width: 768px) and (max-width:1200px){
     .question{
         width: 20%;
