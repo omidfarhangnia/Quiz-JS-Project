@@ -115,3 +115,12 @@ input{
         font-size: 20px !important;
     }
 }
+@media (max-width: 600px) {
+    #previous__button{
+        margin-top: 30px;
+    }
+    #previous__button , #GetScore__button , #next__button{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
